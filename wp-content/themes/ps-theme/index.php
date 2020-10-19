@@ -17,16 +17,13 @@
                 //----Querying Custom Post Types
                 // параметры по умолчанию
 
-                $posts = getFAQ();
+                $faqs = getFAQ();
 
-                foreach ($posts as $post) {
-                    setup_postdata($post);
-                    // формат вывода the_title() ...
-                    // setup_postdata($post);
+                foreach ($faqs as $faq) {
                     echo '</br>';
-                    echo $post->post_title;
+                    echo $faq->post_title;
                     echo '</br>';
-                    echo $post->post_content;
+                    echo $faq->post_content;
                     echo '</br>';
                 }
 
@@ -43,27 +40,21 @@
                 <hr>
                 <?php
                 //----Querying Custom Post Types
-                // параметры по умолчанию               
-                // echo '<pre>';
-                // var_dump($posts_reviews);
-                // echo '</pre>';
-                foreach (getReviews() as $review) {
-                    // setup_postdata($post_rev);
-                    // формат вывода the_title() ...
-                    // setup_postdata($post);
+                // параметры по умолчанию
 
-                    // $id = $post_review->ID;
-                    //var_dump($review);
+                $reviews = getReviews();
+
+                foreach ($reviews as $review) {
+                    echo '</br>';
                     echo $review['name'];
-                    // echo '</br>' . $review['authors'] . '</br>';
-                    // echo '</br>' . $review['opinions'] . '</br>';
-                    // echo $post_review->post_content;
-                    // echo get_the_post_thumbnail($id, 'thumbnail', array('class' => 'alignleft'));
-
-                    // echo '</br>';
+                    echo '</br>';
+                    echo $review['description'];
+                    echo '</br>';
+                    echo $review['job'];
+                    echo '</br>';
+                    echo $review['text'];
+                    echo '</br>';
                 }
-
-
                 ?>
             </div>
         </div>
@@ -73,3 +64,6 @@
 </body>
 
 </html>
+<?php
+echo '<hr><strong>Number of queries on this page - ' . get_num_queries() . '</strong>';
+?>
