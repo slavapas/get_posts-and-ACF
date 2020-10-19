@@ -52,6 +52,8 @@
                     echo '</br>';
                     echo $review['job'];
                     echo '</br>';
+                    echo '<img src="' . $review['img'] . '">';
+                    echo '</br>';
                     echo $review['text'];
                     echo '</br>';
                 }

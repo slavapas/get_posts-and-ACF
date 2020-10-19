@@ -92,6 +92,7 @@ function getReviews()
         // print_r(get_fields($postID));
         $review['name'] = $post->post_title;
         $review['description'] = $post->post_content;
+        $review['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
         $reviews[] = $review;
         //print_r($reviews);
     }
