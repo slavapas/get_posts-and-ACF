@@ -36,28 +36,32 @@
     <!-- Reviews Section -->
     <div class="container">REVIEWs
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xl-12">
                 <hr>
                 <?php
                 //----Querying Custom Post Types
                 // параметры по умолчанию
 
                 $reviews = getReviews();
-
-                foreach ($reviews as $review) {
-                    echo '</br>';
-                    echo $review['name'];
-                    echo '</br>';
-                    echo $review['description'];
-                    echo '</br>';
-                    echo $review['job'];
-                    echo '</br>';
-                    echo '<img src="' . $review['img'] . '">';
-                    echo '</br>';
-                    echo $review['text'];
-                    echo '</br>';
-                }
                 ?>
+                <?php foreach ($reviews as $review) : ?>
+                    <div class="col-md-1">
+                        <?php echo $review['name']; ?>
+                    </div>
+                    <div class="col-md-11">
+                        <?php echo $review['description']; ?>
+                    </div>
+                    <div class="col-md-1">
+                        <?php echo $review['job']; ?>
+                    </div>
+                    <div class="col-md-11">
+                        <?php echo '<img src="' . $review['img'] . '">'; ?>
+                    </div>
+                    <div class="col-md-12">
+                        <?php echo $review['text']; ?>
+                    </div>
+                <?php endforeach; ?>
+
             </div>
         </div>
     </div>

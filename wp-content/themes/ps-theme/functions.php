@@ -1,14 +1,14 @@
 <?php
-// // правильный способ подключить стили и скрипты
-// add_action('wp_enqueue_scripts', 'theme_name_scripts');
+// правильный способ подключить стили и скрипты
+add_action('wp_enqueue_scripts', 'theme_name_scripts');
 
-// // add_action('wp_print_styles', 'theme_name_scripts'); // можно использовать этот хук он более поздний
-// function theme_name_scripts()
-// {
-//     wp_enqueue_style('style-name', get_stylesheet_uri());
-//     wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/bootstrap-main/css/bootstrap.min.css');
-//     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/bootstrap-main/js/bootstrap.min.js', array(), '1.0.0', TRUE);
-// }
+// add_action('wp_print_styles', 'theme_name_scripts'); // можно использовать этот хук он более поздний
+function theme_name_scripts()
+{
+    wp_enqueue_style('style-name', get_stylesheet_uri());
+    wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+    wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '1.0.0', TRUE);
+}
 
 
 add_action('init', 'my_first_post_type');
